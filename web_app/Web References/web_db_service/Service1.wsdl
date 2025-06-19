@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="get_movie_list">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_movie_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_movie_listResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_serial_list">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_serial_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_serial_listResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_user_list">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_user_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_user_listResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_golden_glob_winners">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_golden_glob_winnersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_golden_glob_winnersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_oscars_winner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_oscars_winnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_oscars_winnerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_serial_avg_rate">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_serial_avg_rateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_serial_avg_rateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_fim_serial_rate">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_fim_serial_rateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_fim_serial_rateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_actors_film_serials">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="familyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_actors_film_serialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_actors_film_serialsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="get_movie_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_movie_list" />
+  </wsdl:message>
+  <wsdl:message name="get_movie_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_movie_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_serial_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_serial_list" />
+  </wsdl:message>
+  <wsdl:message name="get_serial_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_serial_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_user_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_user_list" />
+  </wsdl:message>
+  <wsdl:message name="get_user_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_user_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_golden_glob_winnersSoapIn">
+    <wsdl:part name="parameters" element="tns:get_golden_glob_winners" />
+  </wsdl:message>
+  <wsdl:message name="get_golden_glob_winnersSoapOut">
+    <wsdl:part name="parameters" element="tns:get_golden_glob_winnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_oscars_winnerSoapIn">
+    <wsdl:part name="parameters" element="tns:get_oscars_winner" />
+  </wsdl:message>
+  <wsdl:message name="get_oscars_winnerSoapOut">
+    <wsdl:part name="parameters" element="tns:get_oscars_winnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_serial_avg_rateSoapIn">
+    <wsdl:part name="parameters" element="tns:get_serial_avg_rate" />
+  </wsdl:message>
+  <wsdl:message name="get_serial_avg_rateSoapOut">
+    <wsdl:part name="parameters" element="tns:get_serial_avg_rateResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_fim_serial_rateSoapIn">
+    <wsdl:part name="parameters" element="tns:get_fim_serial_rate" />
+  </wsdl:message>
+  <wsdl:message name="get_fim_serial_rateSoapOut">
+    <wsdl:part name="parameters" element="tns:get_fim_serial_rateResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_actors_film_serialsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_actors_film_serials" />
+  </wsdl:message>
+  <wsdl:message name="get_actors_film_serialsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_actors_film_serialsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="get_movie_list">
+      <wsdl:input message="tns:get_movie_listSoapIn" />
+      <wsdl:output message="tns:get_movie_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_list">
+      <wsdl:input message="tns:get_serial_listSoapIn" />
+      <wsdl:output message="tns:get_serial_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_user_list">
+      <wsdl:input message="tns:get_user_listSoapIn" />
+      <wsdl:output message="tns:get_user_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_golden_glob_winners">
+      <wsdl:input message="tns:get_golden_glob_winnersSoapIn" />
+      <wsdl:output message="tns:get_golden_glob_winnersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_oscars_winner">
+      <wsdl:input message="tns:get_oscars_winnerSoapIn" />
+      <wsdl:output message="tns:get_oscars_winnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_avg_rate">
+      <wsdl:input message="tns:get_serial_avg_rateSoapIn" />
+      <wsdl:output message="tns:get_serial_avg_rateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_fim_serial_rate">
+      <wsdl:input message="tns:get_fim_serial_rateSoapIn" />
+      <wsdl:output message="tns:get_fim_serial_rateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_actors_film_serials">
+      <wsdl:input message="tns:get_actors_film_serialsSoapIn" />
+      <wsdl:output message="tns:get_actors_film_serialsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_movie_list">
+      <soap:operation soapAction="http://tempuri.org/get_movie_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_list">
+      <soap:operation soapAction="http://tempuri.org/get_serial_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_user_list">
+      <soap:operation soapAction="http://tempuri.org/get_user_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_golden_glob_winners">
+      <soap:operation soapAction="http://tempuri.org/get_golden_glob_winners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_oscars_winner">
+      <soap:operation soapAction="http://tempuri.org/get_oscars_winner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_avg_rate">
+      <soap:operation soapAction="http://tempuri.org/get_serial_avg_rate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_fim_serial_rate">
+      <soap:operation soapAction="http://tempuri.org/get_fim_serial_rate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_actors_film_serials">
+      <soap:operation soapAction="http://tempuri.org/get_actors_film_serials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_movie_list">
+      <soap12:operation soapAction="http://tempuri.org/get_movie_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_list">
+      <soap12:operation soapAction="http://tempuri.org/get_serial_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_user_list">
+      <soap12:operation soapAction="http://tempuri.org/get_user_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_golden_glob_winners">
+      <soap12:operation soapAction="http://tempuri.org/get_golden_glob_winners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_oscars_winner">
+      <soap12:operation soapAction="http://tempuri.org/get_oscars_winner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_serial_avg_rate">
+      <soap12:operation soapAction="http://tempuri.org/get_serial_avg_rate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_fim_serial_rate">
+      <soap12:operation soapAction="http://tempuri.org/get_fim_serial_rate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_actors_film_serials">
+      <soap12:operation soapAction="http://tempuri.org/get_actors_film_serials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:5223/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:5223/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Movie" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-EMT1D62;Initial Catalog=Movie;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MovieConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Actor" Member="Actors">
+    <Type Name="Actor">
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="actor_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="actor_family_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="born" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Actor_Film_Actor" Member="Film_Actors" ThisKey="actor_id" OtherKey="actor_id" Type="Film_Actor" />
+      <Association Name="Actor_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="actor_id" OtherKey="actor_id" Type="Award_Film_Serial" />
+      <Association Name="Actor_Film_Actor1" Member="Film_Actor1s" ThisKey="actor_id" OtherKey="actor_id" Type="Film_Actor1" />
+      <Association Name="Actor_Serial_Actor" Member="Serial_Actors" ThisKey="actor_id" OtherKey="actor_id" Type="Serial_Actor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film" Member="Films">
+    <Type Name="Film">
+      <Column Name="film_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="imdb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="users_point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="story_brief" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="box_office" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="budget" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="genre_id" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="film_duration" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="film_size" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Film_Film_Actor" Member="Film_Actors" ThisKey="film_id" OtherKey="film_id" Type="Film_Actor" />
+      <Association Name="Film_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="film_id" OtherKey="film_id" Type="Award_Film_Serial" />
+      <Association Name="Film_Film_Actor1" Member="Film_Actor1s" ThisKey="film_id" OtherKey="film_id" Type="Film_Actor1" />
+      <Association Name="Film_Rate" Member="Rates" ThisKey="film_id" OtherKey="film_id" Type="Rate" />
+      <Association Name="Genre_Film" Member="Genre" ThisKey="genre_id" OtherKey="genre_id" Type="Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film_Actor" Member="Film_Actors">
+    <Type Name="Film_Actor">
+      <Column Name="film_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Actor_Film_Actor" Member="Actor" ThisKey="actor_id" OtherKey="actor_id" Type="Actor" IsForeignKey="true" />
+      <Association Name="Film_Film_Actor" Member="Film" ThisKey="film_id" OtherKey="film_id" Type="Film" IsForeignKey="true" />
+      <Association Name="Actor1_Film_Actor" Member="Actor1" ThisKey="actor_id" OtherKey="actor_id" Type="Actor1" IsForeignKey="true" />
+      <Association Name="Director_Film_Actor" Member="Director" ThisKey="director_id" OtherKey="director_id" Type="Director" IsForeignKey="true" />
+      <Association Name="Film1_Film_Actor" Member="Film1" ThisKey="film_id" OtherKey="film_id" Type="Film1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Actor" Member="Actor1s">
+    <Type Name="Actor1">
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="actor_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="actor_family_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="born" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Actor1_Film_Actor" Member="Film_Actors" ThisKey="actor_id" OtherKey="actor_id" Type="Film_Actor" />
+      <Association Name="Actor1_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="actor_id" OtherKey="actor_id" Type="Award_Film_Serial" />
+      <Association Name="Actor1_Film_Actor1" Member="Film_Actor1s" ThisKey="actor_id" OtherKey="actor_id" Type="Film_Actor1" />
+      <Association Name="Actor1_Serial_Actor" Member="Serial_Actors" ThisKey="actor_id" OtherKey="actor_id" Type="Serial_Actor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Award" Member="Awards">
+    <Type Name="Award">
+      <Column Name="award_id" Type="System.String" DbType="NChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="award_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Association Name="Award_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="award_id" OtherKey="award_id" Type="Award_Film_Serial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Award_Film_Serial" Member="Award_Film_Serials">
+    <Type Name="Award_Film_Serial">
+      <Column Name="award_id" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="film_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="serial_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="winnerof" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="winner_name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Actor_Award_Film_Serial" Member="Actor" ThisKey="actor_id" OtherKey="actor_id" Type="Actor" IsForeignKey="true" />
+      <Association Name="Actor1_Award_Film_Serial" Member="Actor1" ThisKey="actor_id" OtherKey="actor_id" Type="Actor1" IsForeignKey="true" />
+      <Association Name="Award_Award_Film_Serial" Member="Award" ThisKey="award_id" OtherKey="award_id" Type="Award" IsForeignKey="true" />
+      <Association Name="Film_Award_Film_Serial" Member="Film" ThisKey="film_id" OtherKey="film_id" Type="Film" IsForeignKey="true" />
+      <Association Name="Director_Award_Film_Serial" Member="Director" ThisKey="director_id" OtherKey="director_id" Type="Director" IsForeignKey="true" />
+      <Association Name="Film1_Award_Film_Serial" Member="Film1" ThisKey="film_id" OtherKey="film_id" Type="Film1" IsForeignKey="true" />
+      <Association Name="Serial_Award_Film_Serial" Member="Serial" ThisKey="serial_id" OtherKey="serial_id" Type="Serial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Director" Member="Directors">
+    <Type Name="Director">
+      <Column Name="director_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="director_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="born" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Director_Film_Actor" Member="Film_Actors" ThisKey="director_id" OtherKey="director_id" Type="Film_Actor" />
+      <Association Name="Director_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="director_id" OtherKey="director_id" Type="Award_Film_Serial" />
+      <Association Name="Director_Film_Actor1" Member="Film_Actor1s" ThisKey="director_id" OtherKey="director_id" Type="Film_Actor1" />
+      <Association Name="Director_Serial" Member="Serials" ThisKey="director_id" OtherKey="director_id" Type="Serial" />
+      <Association Name="Director_Serial_Actor" Member="Serial_Actors" ThisKey="director_id" OtherKey="director_id" Type="Serial_Actor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film" Member="Film1s">
+    <Type Name="Film1">
+      <Column Name="film_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="imdb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="users_point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="story_brief" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="box_office" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="budget" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="genre_id" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="film_duration" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="film_size" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Film1_Film_Actor" Member="Film_Actors" ThisKey="film_id" OtherKey="film_id" Type="Film_Actor" />
+      <Association Name="Film1_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="film_id" OtherKey="film_id" Type="Award_Film_Serial" />
+      <Association Name="Film1_Film_Actor1" Member="Film_Actor1s" ThisKey="film_id" OtherKey="film_id" Type="Film_Actor1" />
+      <Association Name="Film1_Rate" Member="Rates" ThisKey="film_id" OtherKey="film_id" Type="Rate" />
+      <Association Name="Genre_Film1" Member="Genre" ThisKey="genre_id" OtherKey="genre_id" Type="Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film_Actor" Member="Film_Actor1s">
+    <Type Name="Film_Actor1">
+      <Column Name="film_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Actor_Film_Actor1" Member="Actor" ThisKey="actor_id" OtherKey="actor_id" Type="Actor" IsForeignKey="true" />
+      <Association Name="Actor1_Film_Actor1" Member="Actor1" ThisKey="actor_id" OtherKey="actor_id" Type="Actor1" IsForeignKey="true" />
+      <Association Name="Director_Film_Actor1" Member="Director" ThisKey="director_id" OtherKey="director_id" Type="Director" IsForeignKey="true" />
+      <Association Name="Film_Film_Actor1" Member="Film" ThisKey="film_id" OtherKey="film_id" Type="Film" IsForeignKey="true" />
+      <Association Name="Film1_Film_Actor1" Member="Film1" ThisKey="film_id" OtherKey="film_id" Type="Film1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FilmAudit" Member="FilmAudits">
+    <Type Name="FilmAudit">
+      <Column Name="film_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="imdb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="users_point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="story_brief" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="box_office" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="budget" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="genre_id" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="film_duration" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="type_operation" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genre" Member="Genres">
+    <Type Name="Genre">
+      <Column Name="genre_id" Type="System.String" DbType="NChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="genre_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="Genre_Film" Member="Films" ThisKey="genre_id" OtherKey="genre_id" Type="Film" />
+      <Association Name="Genre_Film1" Member="Film1s" ThisKey="genre_id" OtherKey="genre_id" Type="Film1" />
+      <Association Name="Genre_Serial" Member="Serials" ThisKey="genre_id" OtherKey="genre_id" Type="Serial" />
+      <Association Name="Genre_UserTable" Member="UserTables" ThisKey="genre_id" OtherKey="favourite_genre_id" Type="UserTable" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rate" Member="Rates">
+    <Type Name="Rate">
+      <Column Name="rate_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="film_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="serial_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="rate" Member="rate1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Association Name="Film_Rate" Member="Film" ThisKey="film_id" OtherKey="film_id" Type="Film" IsForeignKey="true" />
+      <Association Name="Film1_Rate" Member="Film1" ThisKey="film_id" OtherKey="film_id" Type="Film1" IsForeignKey="true" />
+      <Association Name="Serial_Rate" Member="Serial" ThisKey="serial_id" OtherKey="serial_id" Type="Serial" IsForeignKey="true" />
+      <Association Name="UserTable_Rate" Member="UserTable" ThisKey="user_id" OtherKey="user_id" Type="UserTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RateAudit" Member="RateAudits">
+    <Type Name="RateAudit">
+      <Column Name="rate_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="film_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="serial_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Column Name="type_operation" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Serial" Member="Serials">
+    <Type Name="Serial">
+      <Column Name="serial_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serial_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="create_channel" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="show_channel" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="season_ongoing" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eposide_duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="genre_id" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Serial_Award_Film_Serial" Member="Award_Film_Serials" ThisKey="serial_id" OtherKey="serial_id" Type="Award_Film_Serial" />
+      <Association Name="Serial_Rate" Member="Rates" ThisKey="serial_id" OtherKey="serial_id" Type="Rate" />
+      <Association Name="Serial_Serial_Actor" Member="Serial_Actors" ThisKey="serial_id" OtherKey="serial_id" Type="Serial_Actor" />
+      <Association Name="Director_Serial" Member="Director" ThisKey="director_id" OtherKey="director_id" Type="Director" IsForeignKey="true" />
+      <Association Name="Genre_Serial" Member="Genre" ThisKey="genre_id" OtherKey="genre_id" Type="Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Serial_Actor" Member="Serial_Actors">
+    <Type Name="Serial_Actor">
+      <Column Name="serial_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="director_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="actor_id" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Actor_Serial_Actor" Member="Actor" ThisKey="actor_id" OtherKey="actor_id" Type="Actor" IsForeignKey="true" />
+      <Association Name="Actor1_Serial_Actor" Member="Actor1" ThisKey="actor_id" OtherKey="actor_id" Type="Actor1" IsForeignKey="true" />
+      <Association Name="Director_Serial_Actor" Member="Director" ThisKey="director_id" OtherKey="director_id" Type="Director" IsForeignKey="true" />
+      <Association Name="Serial_Serial_Actor" Member="Serial" ThisKey="serial_id" OtherKey="serial_id" Type="Serial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAudit" Member="UserAudits">
+    <Type Name="UserAudit">
+      <Column Name="user_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NChar(14)" CanBeNull="true" />
+      <Column Name="nationality" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="favourite_genre_id" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type_operation" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTable" Member="UserTables">
+    <Type Name="UserTable">
+      <Column Name="user_id" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NChar(14)" CanBeNull="true" />
+      <Column Name="nationality" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="favourite_genre_id" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserTable_Rate" Member="Rates" ThisKey="user_id" OtherKey="user_id" Type="Rate" />
+      <Association Name="Genre_UserTable" Member="Genre" ThisKey="favourite_genre_id" OtherKey="genre_id" Type="Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.film_avgRate" Member="film_avgRates">
+    <Type Name="film_avgRate">
+      <Column Name="film_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Average_rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.film_serial_rating" Member="film_serial_ratings">
+    <Type Name="film_serial_rating">
+      <Column Name="name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="serial_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.serial_avgRate" Member="serial_avgRates">
+    <Type Name="serial_avgRate">
+      <Column Name="serial_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Averate_rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.actor_films_serials" Method="actor_films_serials" IsComposable="true">
+    <Parameter Name="actor_name" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="actor_family_name" Type="System.String" DbType="NChar(30)" />
+    <ElementType Name="actor_films_serialsResult">
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="film_genre" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Film_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="serial_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="serial_genre" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Serial_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.film_avg_user" Method="film_avg_user" IsComposable="true">
+    <Parameter Name="film_name" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Double" />
+  </Function>
+  <Function Name="dbo.film_avg_users" Method="film_avg_users" IsComposable="true">
+    <Parameter Name="film_name" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Double" />
+  </Function>
+  <Function Name="dbo.golden_glob_winners" Method="golden_glob_winners" IsComposable="true">
+    <Parameter Name="selected_year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="golden_glob_winnersResult">
+      <Column Name="serial_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="winnerof" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="winner_name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.oscars_winners" Method="oscars_winners" IsComposable="true">
+    <Parameter Name="selected_year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="oscars_winnersResult">
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="winnerof" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="winner_name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMovies" Method="GetMovies">
+    <ElementType Name="GetMoviesResult">
+      <Column Name="film_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="genre_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="imdb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="story_brief" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="box_office" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="film_duration" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSerials" Method="GetSerials">
+    <ElementType Name="GetSerialsResult">
+      <Column Name="serial_title" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="director_family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_channel" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="show_channel" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="genre_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUsers" Method="GetUsers">
+    <ElementType Name="GetUsersResult">
+      <Column Name="name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NChar(14)" CanBeNull="true" />
+      <Column Name="nationality" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="genre_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

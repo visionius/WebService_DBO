@@ -1,0 +1,12 @@
+E:\Projects\programming-c-1399-1\WebService1\bin\WebService1.dll
+E:\Projects\programming-c-1399-1\WebService1\bin\WebService1.pdb
+E:\Projects\programming-c-1399-1\WebService1\obj\Debug\WebService1.csprojResolveAssemblyReference.cache
+E:\Projects\programming-c-1399-1\WebService1\obj\Debug\WebService1.dll
+E:\Projects\programming-c-1399-1\WebService1\obj\Debug\WebService1.pdb
+F:\iut\99-1\db_lab\db_project\WebService1\bin\WebService1.dll.config
+F:\iut\99-1\db_lab\db_project\WebService1\bin\WebService1.dll
+F:\iut\99-1\db_lab\db_project\WebService1\bin\WebService1.pdb
+F:\iut\99-1\db_lab\db_project\WebService1\obj\Debug\WebService1.csproj.AssemblyReference.cache
+F:\iut\99-1\db_lab\db_project\WebService1\obj\Debug\WebService1.csproj.CoreCompileInputs.cache
+F:\iut\99-1\db_lab\db_project\WebService1\obj\Debug\WebService1.dll
+F:\iut\99-1\db_lab\db_project\WebService1\obj\Debug\WebService1.pdb

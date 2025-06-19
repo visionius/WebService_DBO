@@ -1,0 +1,16 @@
+E:\Projects\programming-c-1399-1\web_app\bin\Debug\web_app.exe.config
+E:\Projects\programming-c-1399-1\web_app\bin\Debug\web_app.exe
+E:\Projects\programming-c-1399-1\web_app\bin\Debug\web_app.pdb
+E:\Projects\programming-c-1399-1\web_app\obj\Debug\web_app.csprojResolveAssemblyReference.cache
+E:\Projects\programming-c-1399-1\web_app\obj\Debug\web_app.exe
+E:\Projects\programming-c-1399-1\web_app\obj\Debug\web_app.pdb
+E:\iut\99-1\db_lab\db_project\web_app\bin\Debug\web_app.exe.config
+E:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.exe
+E:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.pdb
+F:\iut\99-1\db_lab\db_project\web_app\bin\Debug\web_app.exe.config
+F:\iut\99-1\db_lab\db_project\web_app\bin\Debug\web_app.exe
+F:\iut\99-1\db_lab\db_project\web_app\bin\Debug\web_app.pdb
+F:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.csproj.AssemblyReference.cache
+F:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.csproj.CoreCompileInputs.cache
+F:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.exe
+F:\iut\99-1\db_lab\db_project\web_app\obj\Debug\web_app.pdb
